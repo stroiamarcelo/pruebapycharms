@@ -10,7 +10,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 import os
-import pyodbc
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 dir_path = os.path.dirname(__file__)
@@ -25,7 +24,7 @@ SECRET_KEY = 'j0n%&s9#!h&1&7#d3r6*k&l2%)c^t%x1)9z^0#!7+kbv@sh3+-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['stroiamarcelo.pythonanywhere.com']
 
 # Application definition
 
@@ -37,7 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'products',
-    'products.templates',
+    'pruebapycharms',
 ]
 
 MIDDLEWARE = [
@@ -73,20 +72,16 @@ WSGI_APPLICATION = 'pruebapycharms.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-
 DATABASES = {
     'default': {
-        'ENGINE': "sql_server.pyodbc",
-        'NAME': 'CRUDDjango',
-        'USER': 'uPython',
-        'PASSWORD': '1234',
-        'HOST': '.\\SQL_UAI',
-        'PORT': '',
-        'OPTIONS': {
-            'driver': 'ODBC Driver 13 for SQL Server',
-        },
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'stroiamarcelo$CRUDDjango',
+        'USER': 'stroiamarcelo',
+        'PASSWORD': 'y6QQB@aA33ykcqR',
+        'HOST': 'stroiamarcelo.mysql.pythonanywhere-services.com',
     }
 }
+
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
